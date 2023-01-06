@@ -31,7 +31,7 @@ class FritzAccess:
             result_phonebook = self.fc.call_action(
                 "X_AVM-DE_OnTel", "GetPhonebook", NewPhonebookID=phonebook_id
             )
-            filename = os.path.join(directory, f"pbook_{phonebook_id}.xml")
+            filename = os.path.join(directory, "pbook_{phonebook_id}.xml")
             self.forward_file(result_phonebook["NewPhonebookURL"], filename)
 
     def forward_file(self, url, filename):
